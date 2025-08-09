@@ -13,16 +13,16 @@
 //         BREAK
 // END
 function task1(n) { 
-    if (n === 1) return; // 1
+    if (n == 1) return; // 1
     for (let i = 1; i <= n; i++) { // 1 + n + n
-        for (let j = 1; j <= n; j++) { // n
-            console.log("*"); // 1
+        for (let j = 1; j <= n; j++) { // 1 + n + n
+            console.log("*"); // n * n
             break; // 1
         }
     }
 }
 
-//  3n + 4 = O(n)
+//  2 + 5n = O(n)
 
 
 
@@ -41,13 +41,14 @@ function task1(n) {
 function task2(n) {
     let a = 0; // 1
 
-    for (let i = (n / 2); i <= n; i++) { // n/2 + n + n
+    for (let i = (n / 2); i <= n; i++) { // 1+ n/2 + n/2
         for (let j = 2; j <= n; j *= 2) { // 1 + log(n) + log(n)
             a = a + n / 2; // n/2 * log(n)
         }
     }
 }
-// (n/2) * log(n) + 2 = O(n*log(n))
+// n/2 = O(n)
+// O(n) * O(log n)= O(n log n)
 
 
 
@@ -65,12 +66,12 @@ function task3(n) {
     let a = 0; // 1
 
     for (let i = 0; i < n; i++) {  // 1 + n + n
-        for (let j = n; j > i; j--) { // n*(n+1)/2 + n + n*(n+1)/2
-            a = a + i + j;  // n*(n+1)/2
+        for (let j = n; j > i; j--) { // 1 + ( n - i ) + ( n - i )
+            a = a + i + j;  // n(n+1)/2
         }
     }
 }
-//  n(n+1)/2 + n + 2 = O(n^2)
+//  n(n+1)/2 = O(n^2)
 
 
 
@@ -96,3 +97,5 @@ function task4(n) {
         i = (i / 2); // log(n)
     }
 }
+
+// O(log n)
